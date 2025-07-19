@@ -12,7 +12,8 @@
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "generate-toc": "markdown-toc -i readme.md"
+    "generate-toc": "markdown-toc -i readme.md",
+    "test": "jest --setupFiles=./backend/jest.setup.js"
   },
   "author": "Brad Traversy",
   "license": "MIT",
@@ -27,9 +28,13 @@
     "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
     "@types/express": "^4.17.17",
     "concurrently": "^7.6.0",
+    "jest": "^30.0.4",
     "markdown-toc": "^1.2.0",
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.21",
+    "supertest": "^7.1.3"
   }
 }
